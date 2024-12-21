@@ -93,30 +93,69 @@
 // Write a program that takes a character(number or string) in a variable & checks whether the given 
 // input is a number, uppercase letter or lower case letter. (Hint: ASCII codes:- A=65, Z=90, a=97, z=122)
 
-const input = prompt("Enter a single character:");
+// const input = prompt("Enter a single character:");
 
-if (input.length !== 1) {
-    console.log("Please enter only one character.");
-} else {
-    const charCode = input.charCodeAt(0); 
+// if (input.length !== 1) {
+//     console.log("Please enter only one character.");
+// } else {
+//     const charCode = input.charCodeAt(0); 
    
-    if (charCode >= 48 && charCode <= 57) {
-        console.log("The input is a number.");
-    }
+//     if (charCode >= 48 && charCode <= 57) {
+//         console.log("The input is a number.");
+//     }
 
-    else if (charCode >= 65 && charCode <= 90) {
-        console.log("The input is an uppercase letter.");
-    }
+//     else if (charCode >= 65 && charCode <= 90) {
+//         console.log("The input is an uppercase letter.");
+//     }
 
-    else if (charCode >= 97 && charCode <= 122) {
-        console.log("The input is a lowercase letter.");
-    }
+//     else if (charCode >= 97 && charCode <= 122) {
+//         console.log("The input is a lowercase letter.");
+//     }
 
-    else {
-        console.log("The input is not a number, uppercase letter, or lowercase letter.");
+//     else {
+//         console.log("The input is not a number, uppercase letter, or lowercase letter.");
+//     }
+// }
+
+// Write a program to create a calculator for +, -, *, /, % using switch case statements.
+// (number1, number2 and operator will be input)
+
+const number1 = parseFloat(prompt("Enter the first number:"));
+const number2 = parseFloat(prompt("Enter the second number:"));
+const operator = prompt("Enter an operator (+, -, *, /, %):");
+
+
+if (isNaN(number1) || isNaN(number2)) {
+    console.log("Please enter valid numbers.");
+} else {
+
+
+    switch (operator) {
+        case "+":
+            console.log(`${number1} + ${number2} = ${number1 + number2}`);
+            break;
+        case "-":
+            console.log(`${number1} - ${number2} = ${number1 - number2}`);
+            break;
+        case "*":
+            console.log(`${number1} * ${number2} = ${number1 * number2}`);
+            break;
+        case "/":
+            if (number2 !== 0) {
+                console.log(`${number1} / ${number2} = ${number1 / number2}`);
+            } else {
+                console.log("Division by zero is not allowed.");
+            }
+            break;
+        case "%":
+            if (number2 !== 0) {
+                console.log(`${number1} % ${number2} = ${number1 % number2}`);
+            } else {
+                console.log("Division by zero is not allowed.");
+            }
+            break;
+        default:
+            console.log("Invalid operator. Please use +, -, *, /, or %.");
     }
 }
-
-
-
 
